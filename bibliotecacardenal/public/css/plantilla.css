@@ -1,0 +1,141 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: #e6f2ff;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    flex: 1;
+}
+
+nav.navbar {
+    background-color: #002855;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+nav.navbar a.navbar-brand img {
+    height: 60px;
+    filter: brightness(1.2);
+    margin-left: 10px;
+}
+
+nav.navbar .navbar-nav .nav-link {
+    font-size: 18px;
+    color: white; 
+    margin-right: 20px;
+}
+
+nav.navbar .navbar-nav .nav-link:hover {
+    color: #cc0000;  
+}
+
+.btn-primary {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+.btn-primary:hover {
+    background-color: #990000;
+    border-color: #990000;
+}
+
+footer.footer {
+    background-color: #002855;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer.footer .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer.footer .social-media a {
+    color: white;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+footer.footer .social-media a:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+h1, h2 {
+    color: #cc0000;
+}
+
+input.form-control {
+    border: 2px solid #002855;
+}
+
+.card {
+    border: 2px solid #002855; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif; 
+}
+
+.card-header {
+    background-color: #002855; 
+    color: white; 
+    font-weight: bold;
+    font-family: 'Arial', sans-serif; 
+}
+
+.card-body {
+    background-color: #ffffff; 
+}
+
+.form-label {
+    color: #002855;
+    font-weight: bold;
+}
+
+.form-control {
+    border: 2px solid #002855; 
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif; 
+}
+
+.form-control:focus {
+    border-color: #cc0000; 
+    box-shadow: 0 0 5px rgba(204, 0, 0, 0.5); 
+}
+
+.btn-success {
+    background-color: #cc0000; 
+    border-color: #cc0000;
+    font-family: 'Arial', sans-serif; 
+}
+
+.btn-success:hover {
+    background-color: #990000; 
+    border-color: #990000;
+}
+
+.text-danger {
+    color: #cc0000; 
+}
+
+.card-footer {
+    background-color: #f0f0f0; 
+}
