@@ -6,34 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @vite('resources/js/app.js')
-
-
 </head>
 <body>
 
-    <h1 class="text-center text-success mt-5 mb-4">Registro Frituras</h1>
-
+@if(session('exito'))
+    <x-Alert tipo="success">{{ session('exito') }}</x-Alert>
+@endif
+    <h1 class="text-center text-success mt-5 mb-4">{{__('Registro Frituras')}}</h1>
     <div class="container col-md-5">
-
     <form>
-
         <div class="mb-3">
-            <label  class="form-label">Nombre: </label>
-            <input type="text" class="form-control" >
+            <label for="nombre" class="form-label">{{__('Nombre:')}}</label>
+            <input type="text" class="form-control" name="txtnombre" >
+            <small class="text-danger fst-italic">{{ $errors->first('txtnombre') }}</small>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Sabor(s): </label>
-            <input type="text" class="form-control" >
+            <label for="sabor" class="form-label">{{__('Sabor(s):')}} </label>
+            <input type="text" class="form-control" name="txtsabor">
+            <small class="text-danger fst-italic">{{ $errors->first('txtsabor') }}</small>
+
         </div>                
 
         <div class="mb-3">
-            <label  class="form-label">Peso: </label>
-            <input type="text" class="form-control"  >
-        </div>
-
-        <button type="" class="btn btn-primary "> Guardar Fritura</button>
-</div>
-
+            <label  for="peso" class="form-label">{{__('Peso:')}} </label>
+            <input type="text" class="form-control" name="txtpeso" >
+            <small class="text-danger fst-italic">{{ $errors->first('txtpeso') }}</small>
+   
+<div class="card-footer text-muted">
+    <div class="d-grid gap-2 mt-2 mb-1">
+      <button type="submit" class="btn btn-primary">{{__('Guardar Fritura')}}</button>
+    </div>
 </body>
 </html>

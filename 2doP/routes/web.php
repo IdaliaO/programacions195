@@ -5,6 +5,6 @@ use App\Http\Controllers\ControladorFrituras;
 
 
 
-Route::get('/', [ControladorFrituras::class, 'formFrituras'])->name('rutaFrituras');
+Route::get('/', [ControladorFrituras::class, 'abrirFormulario'])->name('rutaFrituras');
 
 
