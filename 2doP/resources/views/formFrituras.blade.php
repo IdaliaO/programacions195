@@ -12,9 +12,15 @@
 @if(session('exito'))
     <x-Alert tipo="success">{{ session('exito') }}</x-Alert>
 @endif
-    <h1 class="text-center text-success mt-5 mb-4">{{__('Registro Frituras')}}</h1>
-    <div class="container col-md-5">
-    <form>
+
+<div class="card font-monospace">
+  <div class="card-header fs-5 text-center text-primary">
+{{__('Registro Frituras')}}
+  </div>
+
+  <div class="container col-md-5">
+        <form action="{{ route('rutaguardar') }}" method="POST">
+            @csrf
         <div class="mb-3">
             <label for="nombre" class="form-label">{{__('Nombre:')}}</label>
             <input type="text" class="form-control" name="txtnombre" >
@@ -32,10 +38,13 @@
             <label  for="peso" class="form-label">{{__('Peso:')}} </label>
             <input type="text" class="form-control" name="txtpeso" >
             <small class="text-danger fst-italic">{{ $errors->first('txtpeso') }}</small>
-   
-<div class="card-footer text-muted">
-    <div class="d-grid gap-2 mt-2 mb-1">
-      <button type="submit" class="btn btn-primary">{{__('Guardar Fritura')}}</button>
-    </div>
+   </div>
+   <div class="card-footer text-muted">
+            <div class="d-grid gap-2 mt-2 mb-1">
+                <button type="submit" class="btn btn-primary">{{ __('Guardar Fritura') }}</button>
+            </div>
+        </div>
+    </form>
+</div>
 </body>
 </html>

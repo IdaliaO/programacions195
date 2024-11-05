@@ -12,22 +12,16 @@ public function abrirFormulario(){
  
 }
 
-    public function authorize($solicitud)
-    {
-        return true;
-    }
-
-    public function rules(): array
-    {
-        return [
-            'txtnombre' => 'required',
-            'txtsabor' => 'required',
-            'txtpeso' => 'required',
-        ];
-    }
-
+public function guardarFritura(Request $solicitud)
+{
+    $validatedData = $solicitud->validate([
+        'txtnombre' => 'required',
+        'txtsabor' => 'required',
+        'txtpeso' => 'required',
+    ]);
     $usuario = $solicitud->input('txtnombre');
-       session()->flash('exito', 'Se guardó el usuario: ' . $usuario);
-       return to_route('rutaFrituras');
+    session()->flash('exito', 'Se guardó el usuario: ' . $usuario);
+    return redirect()->back()->with('exito', 'Fritura guardada correctamente.');
 
+}
 }
