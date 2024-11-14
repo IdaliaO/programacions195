@@ -6,7 +6,7 @@ use App\Http\Controllers\ControladorVistas;
 // rutas para trabajar con un controlador
 
 Route::get('/', [ControladorVistas::class, 'home'])->name('rutainicio');
-Route::get('/formulario', [ControladorVistas::class, 'formulario'])->name('rutaformulario');
+Route::get('/formulario', [ControladorVistas::class, 'mostrarFormulario'])->name('rutaformulario');
 Route::get('/clientes', [ControladorVistas::class, 'consulta'])->name('rutaclientes');
 Route::post('/enviar', [ControladorVistas::class, 'procesarCliente'])->name('procesar');
 Route :: view('/','inicio');
