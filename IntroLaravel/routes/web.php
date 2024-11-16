@@ -1,22 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ControladorVistas;
+use App\Http\Controllers\clienteController;
 
-// rutas para trabajar con un controlador
 
-Route::get('/', [ControladorVistas::class, 'home'])->name('rutainicio');
-Route::get('/formulario', [ControladorVistas::class, 'mostrarFormulario'])->name('rutaformulario');
-Route::get('/clientes', [ControladorVistas::class, 'consulta'])->name('rutaclientes');
-Route::post('/enviar', [ControladorVistas::class, 'procesarCliente'])->name('procesar');
 Route :: view('/','inicio');
 Route :: view('/formulario','formulario');
-Route :: view('/clientes','clientes');
 
 
-
-
-
+//Rutas de clienteController
+Route::get('/cliente/create', [clienteController::class, 'create'])->name('rutaformulario');
+Route::post('/cliente', [clienteController::class, 'store'])->name('procesar');
+Route::get('/clientes', [clienteController::class, 'index'])->name('rutaclientes');
+Route::get('/', [clienteController::class, 'home'])->name('rutainicio');
 // Route :: view('/','inicio');
 // Route :: view('/formulario','formulario');
 // Route :: view('/clientes','clientes');
