@@ -13,17 +13,16 @@
         .full-height{
             height: 100vh;
         }
-        </style>
+    </style>
 </head>
 <body>
 
     <div class="d-flex flex-column justify-content-center align-items-center text-center full-height">
         <h1 class="display-1">Bienvenido querido Turista!</h1>
         <p>Presiona el botón para iniciar...</p>
-         <a href="/formulario" class="btn btn-primary">Ir al Registro</a>  
+         <a href="{{ route('rutaformulario') }}" class="btn btn-primary">Ir al Registro</a>  
     </div>
 
-  
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>

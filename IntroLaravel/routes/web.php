@@ -4,15 +4,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\clienteController;
 
 
-Route :: view('/','inicio');
-Route :: view('/formulario','formulario');
-
-
-//Rutas de clienteController
+Route::get('/', [clienteController::class, 'home'])->name('rutainicio');
+Route::get('/clientes', [clienteController::class, 'index'])->name('rutaclientes');
 Route::get('/cliente/create', [clienteController::class, 'create'])->name('rutaformulario');
 Route::post('/cliente', [clienteController::class, 'store'])->name('procesar');
-Route::get('/clientes', [clienteController::class, 'index'])->name('rutaclientes');
-Route::get('/', [clienteController::class, 'home'])->name('rutainicio');
+
+Route::get('/cliente/{id}/edit', [clienteController::class, 'edit'])->name('editarCliente');
+Route::put('/cliente/{id}', [clienteController::class, 'update'])->name('actualizarCliente');
+Route::delete('/cliente/{id}', [clienteController::class, 'destroy'])->name('eliminarCliente');
+
+
+
+
+
 // Route :: view('/','inicio');
 // Route :: view('/formulario','formulario');
 // Route :: view('/clientes','clientes');
